@@ -1,0 +1,23 @@
+# Dependencias
+node_modules/
+.venv/
+venv/
+
+# Archivos generados
+dist/
+build/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.db
+reporte.md
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Variables de entorno (¡nunca subir claves!)
+.env

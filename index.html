@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sabores Latinos: tacos, arepas, empanadas y ceviche. Mirá el menú, armá tu pedido y reservá tu mesa.">
+  <title>Sabores Latinos · Cocina callejera de toda Latinoamérica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Work+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- Banderines de papel picado generados con CSS -->
+  <div class="papel-picado" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#" class="logo">Sabores<br>Latinos</a>
+    <button class="carrito-btn" id="abrirCarrito" aria-label="Ver pedido">
+      🛒 <span id="contador">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>De Ciudad de México a Buenos Aires, en un solo plato.</h1>
+      <p>Tacos al pastor, arepas, empanadas salteñas y ceviche. Todo hecho al momento.</p>
+      <a href="#menu" class="btn">Ver el menú</a>
+      <div class="sticker" aria-hidden="true">¡Recién<br>salido!</div>
+    </section>
+
+    <section id="menu" class="menu">
+      <h2>Menú</h2>
+      <div class="tabs" role="tablist" aria-label="Países">
+        <button role="tab" class="tab activa" data-pais="todos" aria-selected="true">Todo</button>
+        <button role="tab" class="tab" data-pais="mx" aria-selected="false">🇲🇽 México</button>
+        <button role="tab" class="tab" data-pais="ve" aria-selected="false">🇻🇪 Venezuela</button>
+        <button role="tab" class="tab" data-pais="ar" aria-selected="false">🇦🇷 Argentina</button>
+        <button role="tab" class="tab" data-pais="pe" aria-selected="false">🇵🇪 Perú</button>
+      </div>
+      <div class="platos" id="platos"></div>
+    </section>
+
+    <section class="reserva" id="reserva">
+      <h2>Reservá tu mesa</h2>
+      <form id="formReserva" novalidate>
+        <label>Nombre <input type="text" name="nombre" required minlength="2"></label>
+        <label>Personas <input type="number" name="personas" min="1" max="12" value="2" required></label>
+        <label>Fecha <input type="date" name="fecha" required></label>
+        <button type="submit" class="btn">Reservar mesa</button>
+        <p class="mensaje" id="mensajeReserva" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- Panel lateral del pedido -->
+  <aside class="panel" id="panel" aria-label="Tu pedido" hidden>
+    <div class="panel-cabecera">
+      <h2>Tu pedido</h2>
+      <button id="cerrarCarrito" aria-label="Cerrar pedido">✕</button>
+    </div>
+    <ul id="listaPedido"></ul>
+    <p class="total">Total: <strong id="total">$0</strong></p>
+    <button class="btn" id="vaciar">Vaciar pedido</button>
+  </aside>
+
+  <footer class="pie">Sabores Latinos · Proyecto de práctica de HTML, CSS y JavaScript</footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

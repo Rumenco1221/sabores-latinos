@@ -1,0 +1,90 @@
+/* =========================================================
+   Sabores Latinos — Paleta inspirada en el papel picado
+   ========================================================= */
+:root {
+  --magenta: #E4007C;
+  --cempasuchil: #FFB000;
+  --turquesa: #00A6A6;
+  --chile: #D7263D;
+  --rosa-claro: #FFF0F6;
+  --tinta: #2A0A1F;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Work Sans", system-ui, sans-serif; background: var(--rosa-claro); color: var(--tinta); line-height: 1.55; }
+h1, h2, .logo { font-family: "Bowlby One", Impact, sans-serif; font-weight: 400; }
+
+/* Papel picado: triángulos de colores repetidos con gradientes */
+.papel-picado {
+  height: 34px;
+  background:
+    linear-gradient(135deg, var(--magenta) 25%, transparent 25%) 0 0 / 40px 34px,
+    linear-gradient(225deg, var(--magenta) 25%, transparent 25%) 0 0 / 40px 34px;
+  background-color: var(--cempasuchil);
+}
+
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5vw; }
+.logo { color: var(--chile); text-decoration: none; font-size: 1.4rem; line-height: 1; }
+.carrito-btn {
+  background: var(--tinta); color: #fff; border: 0; border-radius: 999px;
+  padding: .6rem 1.2rem; font-size: 1.05rem; cursor: pointer; font-family: inherit; font-weight: 800;
+}
+.carrito-btn span { background: var(--cempasuchil); color: var(--tinta); border-radius: 999px; padding: 0 .5rem; margin-left: .3rem; }
+.carrito-btn.salto { animation: salto .4s; }
+@keyframes salto { 40% { transform: scale(1.18) rotate(-4deg); } }
+
+.hero {
+  position: relative; margin: 1rem 5vw 3rem; padding: 4rem 6%; border-radius: 32px;
+  background: var(--magenta); color: #fff; overflow: hidden;
+}
+.hero h1 { font-size: clamp(2.2rem, 6vw, 4.6rem); line-height: 1.05; max-width: 15ch; }
+.hero p { font-size: 1.2rem; margin: 1.2rem 0 2rem; max-width: 45ch; }
+.sticker {
+  position: absolute; right: 6%; top: 50%; width: 150px; height: 150px; border-radius: 50%;
+  background: var(--cempasuchil); color: var(--tinta); display: grid; place-items: center; text-align: center;
+  font-family: "Bowlby One", sans-serif; font-size: 1.1rem; transform: translateY(-50%) rotate(12deg);
+  box-shadow: 0 0 0 8px var(--turquesa);
+}
+.btn {
+  display: inline-block; background: var(--cempasuchil); color: var(--tinta); text-decoration: none;
+  border: 0; padding: .9rem 1.8rem; border-radius: 12px; font-weight: 800; font-size: 1rem; cursor: pointer; font-family: inherit;
+  box-shadow: 4px 4px 0 var(--tinta);
+}
+.btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--tinta); }
+:focus-visible { outline: 3px solid var(--turquesa); outline-offset: 3px; }
+
+.menu, .reserva { padding: 2rem 5vw 4rem; max-width: 1200px; margin: 0 auto; }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--chile); margin-bottom: 1.2rem; }
+.tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.tab { border: 2px solid var(--tinta); background: #fff; padding: .5rem 1rem; border-radius: 999px; cursor: pointer; font-weight: 600; font-family: inherit; }
+.tab.activa { background: var(--turquesa); color: #fff; border-color: var(--turquesa); }
+
+.platos { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; }
+.plato { background: #fff; border-radius: 22px; padding: 1.4rem; border: 3px solid var(--tinta); display: flex; flex-direction: column; }
+.plato .emoji { font-size: 3.2rem; background: var(--color); border-radius: 16px; text-align: center; padding: .8rem 0; margin-bottom: 1rem; }
+.plato h3 { font-size: 1.2rem; }
+.plato p { color: #6b4a5e; font-size: .92rem; flex: 1; margin: .3rem 0 1rem; }
+.plato .pie-plato { display: flex; justify-content: space-between; align-items: center; }
+.plato .precio { font-weight: 800; font-size: 1.2rem; }
+.agregar { background: var(--chile); color: #fff; border: 0; border-radius: 10px; padding: .5rem .9rem; font-weight: 800; cursor: pointer; font-family: inherit; }
+
+.reserva form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; align-items: end; background: var(--turquesa); padding: 2rem; border-radius: 24px; color: #fff; }
+.reserva label { display: flex; flex-direction: column; gap: .3rem; font-weight: 600; }
+.reserva input { padding: .7rem; border-radius: 10px; border: 0; font-size: 1rem; font-family: inherit; }
+.reserva input.error { outline: 3px solid var(--cempasuchil); }
+.mensaje { grid-column: 1 / -1; font-weight: 600; min-height: 1.5em; }
+
+.panel {
+  position: fixed; top: 0; right: 0; height: 100%; width: min(380px, 90vw); background: #fff; z-index: 20;
+  padding: 1.5rem; box-shadow: -10px 0 0 var(--magenta); display: flex; flex-direction: column; gap: 1rem;
+}
+.panel[hidden] { display: none; } /* sin esto, display:flex anula el atributo hidden */
+.panel-cabecera { display: flex; justify-content: space-between; align-items: center; }
+.panel-cabecera button { background: none; border: 0; font-size: 1.5rem; cursor: pointer; }
+#listaPedido { list-style: none; flex: 1; overflow: auto; }
+#listaPedido li { display: flex; justify-content: space-between; padding: .6rem 0; border-bottom: 1px dashed #d9b3c8; }
+#listaPedido .vacio { color: #8a6a7c; border: 0; }
+.total { font-size: 1.3rem; }
+.pie { text-align: center; padding: 2rem; background: var(--tinta); color: #f7d6e7; }
+
+@media (max-width: 700px) { .sticker { display: none; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
