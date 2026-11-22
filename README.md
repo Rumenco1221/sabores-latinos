@@ -75,8 +75,8 @@ Verifica SEO básico, semántica, accesibilidad de imágenes y que existan los a
 
 ## 👩‍💻 Autora
 
-**Verónica** — Desarrolladora Full Stack en formación.
-[LinkedIn](https://www.linkedin.com/in/TU-PERFIL) · [GitHub](https://github.com/Rumenco1221)
+**Estela Oviedo Cortez** — Desarrolladora Full Stack en formación.
+[LinkedIn](https://www.linkedin.com/in/estela-oviedo-cortez-796303228) · [GitHub](https://github.com/Rumenco1221)
 
 ## 📄 Licencia
 
